@@ -1,0 +1,5 @@
+.DS_Store
+.tmp-frames/
+.tmp-frames-ref/
+*.mov
+*.mov.png
