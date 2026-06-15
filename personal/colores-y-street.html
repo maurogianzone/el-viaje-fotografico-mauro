@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Colores y Street — Series</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Exo+2:wght@400;600;700;800;900&family=IBM+Plex+Mono:wght@400;500&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="../css/styles.css" />
+  </head>
+  <body>
+    <div class="page">
+      <header class="site-header">
+        <nav class="site-header__nav" aria-label="Principal">
+          <a href="../personal.html" aria-current="page">Series</a>
+          <a href="../sobre-mi.html">Sobre mi</a>
+        </nav>
+        <a class="site-header__title" href="../index.html">El viaje fotográfico de Mauro</a>
+        <div class="site-header__social">
+          <a href="https://www.instagram.com/" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
+            <img class="site-header__icon" src="../assets/icons/icon-instagram.svg" width="16" height="16" alt="" />
+          </a>
+          <a href="https://www.youtube.com/" target="_blank" rel="noopener noreferrer" aria-label="YouTube">
+            <img class="site-header__icon" src="../assets/icons/icon-youtube.svg" width="16" height="16" alt="" />
+          </a>
+        </div>
+        <button
+          type="button"
+          class="site-header__menu-btn"
+          data-menu-open
+          aria-expanded="false"
+          aria-controls="menu-overlay"
+          aria-label="Abrir menú"
+        >
+          <svg width="27" height="21" viewBox="0 0 27 21" fill="none" aria-hidden="true">
+            <path stroke="currentColor" stroke-width="2" d="M0 1.5h27M0 10.5h27M0 19.5h20" />
+          </svg>
+        </button>
+      </header>
+
+      <main class="gallery-page" data-series-gallery>
+        <div class="gallery-desktop">
+          <section class="gallery-page__layout gallery-page--desktop-only" aria-label="Galería Colores y Street">
+            <div class="gallery-page__center">
+              <div class="gallery-page__intro">
+                <h1 class="gallery-page__title">Colores y Street</h1>
+                <span class="gallery-page__intro-sep" aria-hidden="true">|</span>
+                <button
+                  type="button"
+                  class="gallery-page__series-btn"
+                  data-details-open
+                  aria-expanded="false"
+                  aria-controls="gallery-details-overlay"
+                >
+                  Sobre la serie
+                </button>
+              </div>
+              <div class="gallery-page__stage">
+                <div class="gallery-page__frame" data-gallery-frame>
+                  <button type="button" class="gallery-page__nav gallery-page__nav--prev" data-gallery-prev aria-label="Foto anterior">
+                    <img src="../assets/icons/arrow-scroll-left.svg" width="28" height="28" alt="" />
+                  </button>
+                  <div class="gallery-page__viewport">
+                    <div class="gallery-page__hero">
+                      <img
+                        data-gallery-main
+                        src="../assets/photos/colores-08.png"
+                        width="1024"
+                        height="682"
+                        alt="Pileta y patio con sillas"
+                        data-orientation="landscape"
+                        loading="eager"
+                      />
+                    </div>
+                  </div>
+                  <button type="button" class="gallery-page__nav gallery-page__nav--next" data-gallery-next aria-label="Foto siguiente">
+                    <img src="../assets/icons/arrow-scroll-right.svg" width="28" height="28" alt="" />
+                  </button>
+                </div>
+              </div>
+              <p class="gallery-page__counter gallery-page__counter--desktop" data-gallery-counter aria-live="polite">1/12</p>
+            </div>
+          </section>
+        </div>
+
+        <section class="gallery-mobile" aria-label="Galería móvil Colores y Street">
+          <div class="gallery-mobile__bar gallery-page__intro">
+            <h1 class="gallery-page__title">Colores y Street</h1>
+            <span class="gallery-page__intro-sep" aria-hidden="true">|</span>
+            <button
+              type="button"
+              class="gallery-page__series-btn"
+              data-details-open
+              aria-expanded="false"
+              aria-controls="gallery-details-overlay"
+            >
+              Sobre la serie
+            </button>
+          </div>
+          <div class="gallery-mobile__stage">
+            <div class="gallery-page__frame" data-gallery-frame>
+              <button type="button" class="gallery-page__nav gallery-page__nav--prev" data-gallery-prev aria-label="Foto anterior">
+                <img src="../assets/icons/arrow-scroll-left.svg" width="28" height="28" alt="" />
+              </button>
+              <div class="gallery-page__viewport">
+                <div class="gallery-page__hero">
+                  <img
+                    data-gallery-main
+                    src="../assets/photos/colores-08.png"
+                    width="1024"
+                    height="682"
+                    alt="Pileta y patio con sillas"
+                    data-orientation="landscape"
+                    loading="eager"
+                  />
+                </div>
+              </div>
+              <button type="button" class="gallery-page__nav gallery-page__nav--next" data-gallery-next aria-label="Foto siguiente">
+                <img src="../assets/icons/arrow-scroll-right.svg" width="28" height="28" alt="" />
+              </button>
+            </div>
+            <p class="gallery-page__counter gallery-page__counter--mobile" data-gallery-counter aria-live="polite">1/12</p>
+          </div>
+        </section>
+        <ul class="gallery-page__photos" data-gallery-photos hidden aria-hidden="true">
+          <li data-gallery-photo data-src="../assets/photos/colores-08.png" data-w="1024" data-h="682" data-alt="Pileta y patio con sillas" data-orientation="landscape"></li>
+          <li data-gallery-photo data-src="../assets/photos/colores-09.png" data-w="1024" data-h="682" data-alt="Ropa colgada en la vereda" data-orientation="landscape"></li>
+          <li data-gallery-photo data-src="../assets/photos/colores-10.png" data-w="681" data-h="1024" data-alt="Estación Shell bajo cielo azul" data-orientation="portrait"></li>
+          <li data-gallery-photo data-src="../assets/photos/colores-11.png" data-w="682" data-h="1024" data-alt="Globos en jaula metálica" data-orientation="portrait"></li>
+          <li data-gallery-photo data-src="../assets/photos/colores-12.png" data-w="1024" data-h="681" data-alt="Subte en Las Heras" data-orientation="landscape"></li>
+          <li data-gallery-photo data-src="../assets/photos/colores-14.png" data-w="1024" data-h="681" data-alt="Sombras sobre pared iluminada" data-orientation="landscape"></li>
+          <li data-gallery-photo data-src="../assets/photos/colores-08.png" data-w="1024" data-h="682" data-alt="Pileta y patio con sillas" data-orientation="landscape"></li>
+          <li data-gallery-photo data-src="../assets/photos/colores-09.png" data-w="1024" data-h="682" data-alt="Ropa colgada en la vereda" data-orientation="landscape"></li>
+          <li data-gallery-photo data-src="../assets/photos/colores-10.png" data-w="681" data-h="1024" data-alt="Estación Shell bajo cielo azul" data-orientation="portrait"></li>
+          <li data-gallery-photo data-src="../assets/photos/colores-11.png" data-w="682" data-h="1024" data-alt="Globos en jaula metálica" data-orientation="portrait"></li>
+          <li data-gallery-photo data-src="../assets/photos/colores-12.png" data-w="1024" data-h="681" data-alt="Subte en Las Heras" data-orientation="landscape"></li>
+          <li data-gallery-photo data-src="../assets/photos/colores-14.png" data-w="1024" data-h="681" data-alt="Sombras sobre pared iluminada" data-orientation="landscape"></li>
+        </ul>
+      </main>
+
+      <footer class="site-footer">
+        <button type="button" class="theme-toggle" aria-label="Cambiar tema">
+          <img class="theme-toggle__icon" src="../assets/icons/icon-dark-mode.svg" width="30" height="30" alt="" />
+        </button>
+        <p class="site-footer__copy">© 2026 Mauro Gianzone</p>
+      </footer>
+    </div>
+
+    <div
+      class="gallery-details-overlay"
+      id="gallery-details-overlay"
+      aria-hidden="true"
+      role="dialog"
+      aria-modal="true"
+      aria-labelledby="gallery-details-title"
+    >
+      <button type="button" class="gallery-details-overlay__backdrop" data-details-close aria-label="Cerrar"></button>
+      <div class="gallery-details-overlay__panel">
+        <button type="button" class="gallery-details-overlay__close" data-details-close aria-label="Cerrar">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true">
+            <path d="M6 6l12 12M18 6L6 18" />
+          </svg>
+        </button>
+        <div class="gallery-details-overlay__content">
+          <h2 class="gallery-details-overlay__title" id="gallery-details-title">Sobre la serie</h2>
+          <div class="gallery-details-overlay__body" data-details-body>
+            <p>
+              Lorem Ipsum es el texto de relleno estándar utilizado en diseño gráfico, editorial y web para
+              previsualizar maquetas (layouts) y tipografías antes de insertar el contenido definitivo. Lorem Ipsum es
+              el texto de relleno estándar utilizado en diseño gráfico, editorial y web para previsualizar maquetas
+              (layouts) y tipografías antes de insertar el contenido definitivo.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="menu-overlay" id="menu-overlay" aria-hidden="true" role="dialog" aria-modal="true" aria-label="Menú">
+      <button type="button" class="menu-overlay__close" data-menu-close aria-label="Cerrar menú">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+          <path d="M6 6l12 12M18 6L6 18" />
+        </svg>
+      </button>
+      <a href="../personal.html">Series</a>
+      <a href="../sobre-mi.html">Sobre mi</a>
+      <a href="https://www.youtube.com/" target="_blank" rel="noopener noreferrer">Canal de YouTube</a>
+      <a href="https://www.instagram.com/" target="_blank" rel="noopener noreferrer">Instagram</a>
+    </div>
+    <script src="../js/main.js"></script>
+    <script src="../js/swipe-letters.js"></script>
+    <script src="../js/page-enter.js"></script>
+    <script src="../js/gallery.js"></script>
+  </body>
+</html>
