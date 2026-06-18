@@ -778,6 +778,14 @@ main.gallery-page {
   margin-inline: 0;
 }
 
+.gallery-page--single .gallery-page__hero img[data-gallery-main] {
+  width: var(--series-hero-slot-w, var(--series-hero-max-w));
+  height: var(--series-hero-slot-h, var(--series-hero-max-h));
+  max-width: var(--series-hero-slot-w, var(--series-hero-max-w));
+  max-height: var(--series-hero-slot-h, var(--series-hero-max-h));
+  object-fit: contain;
+}
+
 .gallery-page__center {
   display: flex;
   flex: 0 0 auto;
@@ -1680,6 +1688,14 @@ main.about {
 
   .gallery-page:not(.gallery-page--single) .gallery-mobile .gallery-page__nav img {
     filter: brightness(0) invert(1);
+  }
+
+  .gallery-page--single .gallery-mobile .gallery-page__hero img[data-gallery-main] {
+    width: 100%;
+    height: 100%;
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain;
   }
 
   .gallery-page--single .gallery-mobile .gallery-page__viewport {

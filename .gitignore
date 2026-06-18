@@ -3,3 +3,4 @@
 .tmp-frames-ref/
 *.mov
 *.mov.png
+.npm-cache/
