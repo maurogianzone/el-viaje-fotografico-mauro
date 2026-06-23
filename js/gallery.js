@@ -671,23 +671,8 @@
     return null;
   }
 
-  function createSeriesNavLinks(prev, next) {
-    var prevLink = document.createElement("a");
-    prevLink.className = "gallery-page__series-link gallery-page__series-link--prev";
-    prevLink.href = prev.file;
-    prevLink.textContent = "Anterior: [" + prev.title + "]";
-    prevLink.setAttribute("aria-label", "Serie anterior: " + prev.title);
-
-    var nextLink = document.createElement("a");
-    nextLink.className = "gallery-page__series-link gallery-page__series-link--next";
-    nextLink.href = next.file;
-    nextLink.textContent = "Siguiente: [" + next.title + "]";
-    nextLink.setAttribute("aria-label", "Serie siguiente: " + next.title);
-
-    return { prevLink: prevLink, nextLink: nextLink };
-  }
-
-  function createMobileSeriesNavLink(kind, series) {
+  function createSeriesNavLink(kind, series, options) {
+    options = options || {};
     var link = document.createElement("a");
     link.className = "gallery-page__series-link gallery-page__series-link--" + kind;
     link.href = series.file;
@@ -698,7 +683,7 @@
 
     var title = document.createElement("span");
     title.className = "gallery-page__series-link-title";
-    title.textContent = series.title;
+    title.textContent = options.bracketTitle ? "[" + series.title + "]" : series.title;
 
     link.appendChild(label);
     link.appendChild(title);
@@ -707,6 +692,17 @@
       (kind === "prev" ? "Serie anterior: " : "Serie siguiente: ") + series.title
     );
     return link;
+  }
+
+  function createSeriesNavLinks(prev, next) {
+    return {
+      prevLink: createSeriesNavLink("prev", prev, { bracketTitle: true }),
+      nextLink: createSeriesNavLink("next", next, { bracketTitle: true }),
+    };
+  }
+
+  function createMobileSeriesNavLink(kind, series) {
+    return createSeriesNavLink(kind, series);
   }
 
   function createSeriesStageRow(prev, next) {

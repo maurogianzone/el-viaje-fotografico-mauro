@@ -1322,6 +1322,10 @@ body.page-is-leaving .site-footer {
   white-space: nowrap;
 }
 
+.gallery-page__series-link-label {
+  font-weight: 700;
+}
+
 .gallery-page__stage-row .gallery-page__series-link {
   position: absolute;
   top: 50%;
