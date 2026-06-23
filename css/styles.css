@@ -1431,6 +1431,10 @@ body.page-is-leaving .site-footer {
   display: none;
 }
 
+.gallery-page__tap-hint {
+  display: none;
+}
+
 /* Mobile gallery / detail */
 .gallery-mobile {
   display: none;
@@ -1916,6 +1920,23 @@ main.about {
   .gallery-page--single .gallery-page__counter--mobile {
     display: none !important;
     margin-top: 0;
+  }
+
+  body.page-index .gallery-page__tap-hint {
+    display: block;
+    margin: 12px 0 0;
+    width: min(var(--mobile-photo-w), 100%);
+    font-family: var(--font-mono);
+    font-size: 11px;
+    line-height: 1.3;
+    text-align: center;
+    color: var(--color-muted);
+    opacity: 0;
+    transition: opacity 0.32s ease;
+  }
+
+  body.page-index .gallery-page__tap-hint.is-visible {
+    opacity: 1;
   }
 
   .gallery-mobile__bar {
