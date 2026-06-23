@@ -12,7 +12,7 @@
     />
     <link rel="stylesheet" href="css/styles.css" />
   </head>
-  <body>
+  <body class="page-index chrome-is-entering">
     <div class="page">
       <header class="site-header">
         <nav class="site-header__nav" aria-label="Principal">
@@ -42,7 +42,7 @@
         </button>
       </header>
 
-      <main class="gallery-page gallery-page--single" data-series-gallery>
+      <main class="gallery-page gallery-page--single" data-series-gallery data-index-hero>
         <div class="gallery-desktop">
           <section class="gallery-page__layout gallery-page--desktop-only" aria-label="Inicio">
             <div class="gallery-page__center">
@@ -51,17 +51,19 @@
                   <button type="button" class="gallery-page__nav gallery-page__nav--prev" data-gallery-prev aria-label="Foto anterior">
                     <img src="assets/icons/arrow-scroll-left.svg" width="28" height="28" alt="" />
                   </button>
-                  <div class="gallery-page__viewport">
+                  <div class="gallery-page__viewport cursor-slideshow-target">
                     <div class="gallery-page__hero">
-                      <img
-                        data-gallery-main
-                        src="assets/photos/hero-center.jpg"
-                        width="720"
-                        height="480"
-                        alt="Fotografía de Mauro Gianzone"
-                        data-orientation="landscape"
-                        loading="eager"
-                      />
+                      <div class="img-reveal" data-img-reveal>
+                        <img
+                          data-gallery-main
+                          src="assets/photos/hero-center.jpg"
+                          width="720"
+                          height="480"
+                          alt="Fotografía de Mauro Gianzone"
+                          data-orientation="landscape"
+                          loading="eager"
+                        />
+                      </div>
                     </div>
                   </div>
                   <button type="button" class="gallery-page__nav gallery-page__nav--next" data-gallery-next aria-label="Foto siguiente">
@@ -80,17 +82,19 @@
               <button type="button" class="gallery-page__nav gallery-page__nav--prev" data-gallery-prev aria-label="Foto anterior">
                 <img src="assets/icons/arrow-scroll-left.svg" width="28" height="28" alt="" />
               </button>
-              <div class="gallery-page__viewport">
+              <div class="gallery-page__viewport cursor-slideshow-target">
                 <div class="gallery-page__hero">
-                  <img
-                    data-gallery-main
-                    src="assets/photos/hero-center.jpg"
-                    width="720"
-                    height="480"
-                    alt="Fotografía de Mauro Gianzone"
-                    data-orientation="landscape"
-                    loading="eager"
-                  />
+                  <div class="img-reveal" data-img-reveal>
+                    <img
+                      data-gallery-main
+                      src="assets/photos/hero-center.jpg"
+                      width="720"
+                      height="480"
+                      alt="Fotografía de Mauro Gianzone"
+                      data-orientation="landscape"
+                      loading="eager"
+                    />
+                  </div>
                 </div>
               </div>
               <button type="button" class="gallery-page__nav gallery-page__nav--next" data-gallery-next aria-label="Foto siguiente">
@@ -107,6 +111,38 @@
             data-w="720"
             data-h="480"
             data-alt="Fotografía de Mauro Gianzone"
+            data-orientation="landscape"
+          ></li>
+          <li
+            data-gallery-photo
+            data-src="assets/photos/colores-08.png"
+            data-w="1024"
+            data-h="682"
+            data-alt="Pileta y patio con sillas"
+            data-orientation="landscape"
+          ></li>
+          <li
+            data-gallery-photo
+            data-src="assets/photos/colores-09.png"
+            data-w="1024"
+            data-h="682"
+            data-alt="Ropa colgada en la vereda"
+            data-orientation="landscape"
+          ></li>
+          <li
+            data-gallery-photo
+            data-src="assets/photos/colores-12.png"
+            data-w="1024"
+            data-h="681"
+            data-alt="Subte en Las Heras"
+            data-orientation="landscape"
+          ></li>
+          <li
+            data-gallery-photo
+            data-src="assets/photos/colores-14.png"
+            data-w="1024"
+            data-h="681"
+            data-alt="Sombras sobre pared iluminada"
             data-orientation="landscape"
           ></li>
         </ul>
@@ -134,6 +170,10 @@
 
     <script src="js/main.js"></script>
     <script src="js/swipe-letters.js"></script>
+    <script src="js/chrome-enter.js"></script>
+    <script src="js/page-exit.js"></script>
+    <script src="js/img-reveal.js"></script>
     <script src="js/gallery.js"></script>
+    <script src="js/index-cursor.js"></script>
   </body>
 </html>

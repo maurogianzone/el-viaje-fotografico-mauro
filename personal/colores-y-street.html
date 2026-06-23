@@ -12,7 +12,7 @@
     />
     <link rel="stylesheet" href="../css/styles.css" />
   </head>
-  <body>
+  <body class="chrome-is-entering">
     <div class="page">
       <header class="site-header">
         <nav class="site-header__nav" aria-label="Principal">
@@ -66,15 +66,17 @@
                   </button>
                   <div class="gallery-page__viewport">
                     <div class="gallery-page__hero">
-                      <img
-                        data-gallery-main
-                        src="../assets/photos/colores-08.png"
-                        width="1024"
-                        height="682"
-                        alt="Pileta y patio con sillas"
-                        data-orientation="landscape"
-                        loading="eager"
-                      />
+                      <div class="img-reveal" data-img-reveal>
+                        <img
+                          data-gallery-main
+                          src="../assets/photos/colores-08.png"
+                          width="1024"
+                          height="682"
+                          alt="Pileta y patio con sillas"
+                          data-orientation="landscape"
+                          loading="eager"
+                        />
+                      </div>
                     </div>
                   </div>
                   <button type="button" class="gallery-page__nav gallery-page__nav--next" data-gallery-next aria-label="Foto siguiente">
@@ -108,15 +110,17 @@
               </button>
               <div class="gallery-page__viewport">
                 <div class="gallery-page__hero">
-                  <img
-                    data-gallery-main
-                    src="../assets/photos/colores-08.png"
-                    width="1024"
-                    height="682"
-                    alt="Pileta y patio con sillas"
-                    data-orientation="landscape"
-                    loading="eager"
-                  />
+                  <div class="img-reveal" data-img-reveal>
+                    <img
+                      data-gallery-main
+                      src="../assets/photos/colores-08.png"
+                      width="1024"
+                      height="682"
+                      alt="Pileta y patio con sillas"
+                      data-orientation="landscape"
+                      loading="eager"
+                    />
+                  </div>
                 </div>
               </div>
               <button type="button" class="gallery-page__nav gallery-page__nav--next" data-gallery-next aria-label="Foto siguiente">
@@ -192,7 +196,9 @@
     </div>
     <script src="../js/main.js"></script>
     <script src="../js/swipe-letters.js"></script>
-    <script src="../js/page-enter.js"></script>
+    <script src="../js/chrome-enter.js"></script>
+    <script src="../js/page-exit.js"></script>
+    <script src="../js/img-reveal.js"></script>
     <script src="../js/gallery.js"></script>
   </body>
 </html>

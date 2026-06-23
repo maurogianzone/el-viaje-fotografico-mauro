@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Sobre mí — El viaje fotográfico de Mauro</title>
+    <title>Prueba Upward Flow — El viaje fotográfico de Mauro</title>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -11,13 +11,14 @@
       rel="stylesheet"
     />
     <link rel="stylesheet" href="css/styles.css" />
+    <link rel="stylesheet" href="css/swirl-test.css" />
   </head>
-  <body class="chrome-is-entering">
+  <body>
     <div class="page">
       <header class="site-header">
         <nav class="site-header__nav" aria-label="Principal">
           <a href="personal.html">Series</a>
-          <a href="sobre-mi.html" aria-current="page">Sobre mi</a>
+          <a href="sobre-mi.html">Sobre mi</a>
         </nav>
         <a class="site-header__title" href="index.html">El viaje fotográfico de Mauro</a>
         <div class="site-header__social">
@@ -42,29 +43,70 @@
         </button>
       </header>
 
-      <main class="about">
-        <div class="about__layout">
-          <div class="about__text">
-            <p>Soy Mauro Gianzone, fotógrafo radicado en Buenos Aires, Argentina.</p>
-            <p>
-              Retrato y documento lo que veo y lo que siento. Me atraen los colores, la forma en que la luz toca lo
-              cotidiano y los contrastes que surgen en esa mezcla entre lo simple y lo profundo.
-            </p>
-            <p>
-              Disfruto trabajar tanto con fotografía digital como analógica, explorando en cada formato distintas maneras de
-              mirar y sentir.
-            </p>
-          </div>
-          <figure class="about__photo">
-            <img
-              src="assets/photos/mauro-gianzone.png"
-              width="800"
-              height="534"
-              alt="Mauro Gianzone tomando una fotografía con su cámara"
-              loading="eager"
-            />
-          </figure>
+      <main class="flow082-test" data-flow082-root>
+        <div class="flow082-test__mobile-msg" aria-live="polite">
+          <span class="flow082-test__badge">Prueba desktop</span>
+          <p>Esta animación está pensada solo para escritorio. Abrí <strong>index-swirl.html</strong> en una pantalla más ancha.</p>
+          <p><a href="index.html">← Volver al home</a></p>
         </div>
+
+        <section class="flow082-effect flow082-test__desktop-only" aria-label="Prueba Upward Image Flow">
+          <div class="flow082__stage">
+            <div class="flow082__container" data-flow082-container>
+              <img
+                class="flow082__media"
+                src="assets/photos/colores-08.png"
+                width="1024"
+                height="682"
+                alt="Pileta y patio con sillas"
+                loading="eager"
+              />
+              <img
+                class="flow082__media"
+                src="assets/photos/colores-09.png"
+                width="1024"
+                height="682"
+                alt="Ropa colgada en la vereda"
+                loading="eager"
+              />
+              <img
+                class="flow082__media"
+                src="assets/photos/colores-10.png"
+                width="681"
+                height="1024"
+                alt="Estación Shell bajo cielo azul"
+                loading="eager"
+              />
+              <img
+                class="flow082__media"
+                src="assets/photos/colores-11.png"
+                width="682"
+                height="1024"
+                alt="Globos en jaula metálica"
+                loading="eager"
+              />
+              <img
+                class="flow082__media"
+                src="assets/photos/colores-12.png"
+                width="1024"
+                height="681"
+                alt="Subte en Las Heras"
+                loading="eager"
+              />
+              <img
+                class="flow082__media"
+                src="assets/photos/colores-14.png"
+                width="1024"
+                height="681"
+                alt="Sombras sobre pared iluminada"
+                loading="eager"
+              />
+            </div>
+          </div>
+          <p class="flow082__hint">
+            Prueba Upward Image Flow · Colores y Street · <a href="index.html">volver al home</a>
+          </p>
+        </section>
       </main>
 
       <footer class="site-footer">
@@ -86,9 +128,10 @@
       <a href="https://www.youtube.com/" target="_blank" rel="noopener noreferrer">Canal de YouTube</a>
       <a href="https://www.instagram.com/" target="_blank" rel="noopener noreferrer">Instagram</a>
     </div>
+
     <script src="js/main.js"></script>
     <script src="js/swipe-letters.js"></script>
-    <script src="js/chrome-enter.js"></script>
-    <script src="js/page-exit.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.7/dist/gsap.min.js"></script>
+    <script src="js/flow082-intro.js"></script>
   </body>
 </html>

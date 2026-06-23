@@ -1,0 +1,118 @@
+/* Upward Image Flow test (MWG 082) — desktop only */
+.flow082-test {
+  width: 100%;
+  max-width: none;
+  padding: 0;
+  margin: 0;
+}
+
+.flow082-test__mobile-msg {
+  display: none;
+  padding: 2rem var(--shell-pad-x);
+  font-family: var(--font-mono);
+  font-size: var(--text-nav);
+  color: var(--color-muted);
+}
+
+.flow082-test__mobile-msg a {
+  color: var(--color-text);
+}
+
+.flow082-test__badge {
+  display: inline-block;
+  margin-bottom: 1rem;
+  padding: 0.35rem 0.6rem;
+  border: 1px solid color-mix(in srgb, var(--color-text) 18%, transparent);
+  font-size: calc(var(--text-nav) - 1px);
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+.flow082-effect {
+  position: relative;
+  width: 100%;
+  min-height: calc(100dvh - var(--chrome-header) - var(--chrome-footer));
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding-top: var(--chrome-header);
+  padding-bottom: calc(var(--chrome-footer) + 0.5rem);
+  box-sizing: border-box;
+}
+
+.flow082__stage {
+  position: relative;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex: 1;
+}
+
+.flow082__container {
+  position: relative;
+  width: var(--flow082-slot-w, var(--series-hero-max-w));
+  height: var(--flow082-slot-h, var(--series-hero-max-h));
+  max-width: calc(100vw - 2 * var(--shell-pad-x));
+  margin-inline: auto;
+  overflow: visible;
+}
+
+.flow082__media {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  border-radius: var(--radius-thumb);
+  will-change: transform, opacity;
+  pointer-events: none;
+}
+
+.flow082__hint {
+  margin: 0;
+  padding: 1.25rem var(--shell-pad-x) 2rem;
+  text-align: center;
+  font-family: var(--font-mono);
+  font-size: calc(var(--text-nav) - 1px);
+  color: var(--color-muted);
+}
+
+.flow082__hint a {
+  color: var(--color-text);
+}
+
+@media (max-width: 56.25rem) {
+  .flow082-test__desktop-only {
+    display: none !important;
+  }
+
+  .flow082-test__mobile-msg {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    min-height: calc(100dvh - var(--chrome-header) - var(--chrome-footer));
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .flow082__stage {
+    min-height: calc(100dvh - var(--chrome-header) - var(--chrome-footer));
+    display: grid;
+    place-items: center;
+  }
+
+  .flow082__media:not(.is-final) {
+    display: none !important;
+  }
+
+  .flow082__media.is-final {
+    position: relative;
+    left: auto;
+    top: auto;
+    transform: none !important;
+    opacity: 1 !important;
+  }
+}

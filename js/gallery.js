@@ -12,7 +12,7 @@
   var MOBILE_PORTRAIT_FRAME_SCALE = 0.68;
   var WHEEL_LOCK_MS = 650;
   var WHEEL_THRESHOLD = 12;
-  var FADE_MS = 280;
+  var FADE_MS = 220;
   var SWIPE_THRESHOLD = 44;
   var SWIPE_AXIS_LOCK = 12;
 
@@ -412,6 +412,11 @@
 
     function swapMain(data, animate) {
       mains.forEach(function (main) {
+        var wrap = main.closest("[data-img-reveal]");
+        if (wrap && animate) {
+          wrap.classList.add("is-carousel-ready");
+        }
+
         function apply() {
           main.src = data.src;
           main.alt = data.alt;
@@ -475,6 +480,7 @@
     root.addEventListener(
       "wheel",
       function (e) {
+        if (root.hasAttribute("data-index-hero")) return;
         if (
           document.querySelector(".menu-overlay.is-open") ||
           document.querySelector(".gallery-details-overlay.is-open")
@@ -511,11 +517,37 @@
       }, 80);
     });
 
-    root.classList.toggle("gallery-page--single", total <= 1);
+    root.classList.toggle(
+      "gallery-page--single",
+      total <= 1 || root.hasAttribute("data-index-hero")
+    );
+
+    function initSlideshowClick() {
+      if (total <= 1) return;
+
+      var selectors = [".cursor-slideshow-target"];
+      if (!root.hasAttribute("data-index-hero")) {
+        selectors.push(".gallery-mobile .gallery-page__viewport");
+      }
+
+      var targets = root.querySelectorAll(selectors.join(", "));
+      if (!targets.length) return;
+
+      targets.forEach(function (target) {
+        target.addEventListener("click", function (e) {
+          if (total <= 1 || locked) return;
+          if (e.target.closest("a, button, input, textarea, select, [role='button']")) return;
+
+          var rect = target.getBoundingClientRect();
+          step(e.clientX < rect.left + rect.width / 2 ? -1 : 1);
+        });
+      });
+    }
 
     refreshHeroSlot();
     setActive(0, { animate: false });
     initMobileSwipe();
+    initSlideshowClick();
   }
 
   function initLegacyStrip(strip) {
