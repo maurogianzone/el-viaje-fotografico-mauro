@@ -1597,6 +1597,174 @@ body.page-is-leaving .site-footer {
   margin-bottom: 0;
 }
 
+/* ——— Gallery lightbox (Adobe Portfolio pattern) ——— */
+html.gallery-lightbox-enabled,
+html.gallery-lightbox-enabled body {
+  overflow: hidden;
+}
+
+.gallery-lightbox {
+  position: fixed;
+  inset: 0;
+  z-index: 111;
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+  transition: opacity 0.4s ease, visibility 0s linear 0.4s;
+}
+
+.gallery-lightbox.is-open {
+  opacity: 1;
+  visibility: visible;
+  pointer-events: auto;
+  transition: opacity 0.4s ease, visibility 0s linear 0s;
+}
+
+.gallery-lightbox__blocking {
+  position: fixed;
+  inset: 0;
+  z-index: 1;
+  background: rgba(255, 255, 255, 0.94);
+  cursor: pointer;
+}
+
+.gallery-lightbox__wrap {
+  position: fixed;
+  inset: 0;
+  z-index: 2;
+  width: 100vw;
+  height: 100%;
+  pointer-events: none;
+}
+
+.gallery-lightbox__content {
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100vw;
+  height: 100%;
+  height: 100dvh;
+  opacity: 1;
+  transition: opacity 0.4s ease;
+}
+
+.gallery-lightbox__figure {
+  display: inline-block;
+  max-width: 100%;
+  max-height: 100%;
+  margin: 0;
+  pointer-events: auto;
+}
+
+.gallery-lightbox__img {
+  display: block;
+  width: auto;
+  height: auto;
+  max-width: 100vw;
+  max-height: 100vh;
+  max-height: 100dvh;
+  user-select: none;
+  -webkit-user-drag: none;
+}
+
+.gallery-lightbox__img.is-portrait {
+  max-width: min(82vw, 100vw - 8rem);
+  max-height: min(86dvh, 100dvh - 5rem);
+}
+
+.gallery-lightbox__close {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  z-index: 3;
+  display: grid;
+  place-items: center;
+  width: 40px;
+  height: 40px;
+  padding: 0;
+  border: 0;
+  background: transparent;
+  cursor: pointer;
+}
+
+.gallery-lightbox__close-bg {
+  fill: #696969;
+  opacity: 0.2;
+  transition: opacity 0.2s ease;
+}
+
+.gallery-lightbox__close:hover .gallery-lightbox__close-bg,
+.gallery-lightbox__close:focus-visible .gallery-lightbox__close-bg {
+  opacity: 0.4;
+}
+
+.gallery-lightbox__nav {
+  position: fixed;
+  top: 50%;
+  z-index: 3;
+  display: grid;
+  place-items: center;
+  width: 2.75rem;
+  height: 2.75rem;
+  padding: 0;
+  border: 0;
+  background: transparent;
+  color: var(--color-text);
+  cursor: pointer;
+  transform: translateY(-50%);
+}
+
+.gallery-lightbox__nav img {
+  display: block;
+  width: 1.75rem;
+  height: 1.75rem;
+}
+
+.gallery-lightbox__nav--prev {
+  left: 2rem;
+}
+
+.gallery-lightbox__nav--next {
+  right: 2rem;
+}
+
+[data-theme="dark"] .gallery-lightbox__nav img {
+  filter: invert(1);
+}
+
+.gallery-lightbox.is-single .gallery-lightbox__nav {
+  display: none;
+}
+
+.gallery-page[data-series-gallery]:not(.gallery-page--single):not([data-index-hero])
+  .gallery-desktop
+  .gallery-page__hero
+  img[data-gallery-main] {
+  cursor: zoom-in;
+}
+
+@media (max-width: 900px) {
+  .gallery-page[data-series-gallery]:not(.gallery-page--single):not([data-index-hero])
+    .gallery-page__hero
+    img[data-gallery-main] {
+    cursor: default;
+  }
+}
+
+@media (max-width: 1024px) {
+  .gallery-lightbox__close {
+    top: 0;
+    right: 0;
+  }
+
+  .gallery-lightbox__close-bg {
+    display: none;
+  }
+}
+
 /* ——— Menu overlay ——— */
 .menu-overlay {
   position: fixed;
