@@ -640,12 +640,12 @@
   }
 
   var SERIES_NAV = [
-    { file: "colores-y-street.html", title: "Colores y Street" },
-    { file: "linda-salta.html", title: "Linda Salta" },
-    { file: "nostalgia-y-luz.html", title: "Nostalgia y luz" },
-    { file: "bariloche.html", title: "Bariloche" },
+    { file: "la-hora-queta.html", title: "La hora quieta" },
+    { file: "geografias-de-ocio.html", title: "Geografías de ocio" },
+    { file: "rituales.html", title: "Rituales" },
+    { file: "coreografia-urbana.html", title: "Coreografía urbana" },
     { file: "parque.html", title: "Parque" },
-    { file: "feliz-mar-del-plata.html", title: "Feliz Mar del Plata" },
+    { file: "random-access-memory.html", title: "Random Access Memory" },
   ];
 
   function getCurrentSeriesIndex() {
