@@ -815,7 +815,7 @@
     { file: "geografias-de-ocio.html", title: "Geografías de ocio" },
     { file: "rituales.html", title: "Rituales" },
     { file: "coreografia-urbana.html", title: "Coreografía urbana" },
-    { file: "parque.html", title: "Parque" },
+    { file: "japon.html", title: "Japón" },
     { file: "random-access-memory.html", title: "Random Access Memory" },
   ];
 
