@@ -2,7 +2,20 @@
   const THEME_KEY = "mg-theme";
 
   function getStoredTheme() {
-    return localStorage.getItem(THEME_KEY);
+    try {
+      return sessionStorage.getItem(THEME_KEY);
+    } catch (error) {
+      return null;
+    }
+  }
+
+  function setStoredTheme(theme) {
+    try {
+      sessionStorage.setItem(THEME_KEY, theme);
+      localStorage.removeItem(THEME_KEY);
+    } catch (error) {
+      /* ignore */
+    }
   }
 
   function updateThemeToggleIcons() {
@@ -48,18 +61,15 @@
       applyTheme(stored, { instant: true });
       return;
     }
-    if (window.matchMedia && window.matchMedia("(prefers-color-scheme: dark)").matches) {
-      applyTheme("dark", { instant: true });
-    } else {
-      applyTheme("light", { instant: true });
-    }
+    // Default: always light (white background), ignore OS preference
+    applyTheme("light", { instant: true });
   }
 
   document.querySelectorAll(".theme-toggle").forEach(function (btn) {
     btn.addEventListener("click", function () {
       const root = document.documentElement;
       const next = root.dataset.theme === "dark" ? "light" : "dark";
-      localStorage.setItem(THEME_KEY, next);
+      setStoredTheme(next);
       applyTheme(next);
     });
   });
