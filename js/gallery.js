@@ -500,6 +500,41 @@
           main.style.maxHeight = heroSlotH ? heroSlotH + "px" : "";
         }
       });
+
+      syncMobileSeriesTitle();
+    }
+
+    /**
+     * Chrome mobile often mis-resolves % tops on flex parents, parking the
+     * series title under the header. Pin it to the real photo frame instead.
+     */
+    function syncMobileSeriesTitle() {
+      var bar = root.querySelector(".gallery-mobile__bar.gallery-page__intro");
+      var mobile = root.querySelector(".gallery-mobile");
+      var frame = root.querySelector(".gallery-mobile .gallery-page__frame");
+      if (!bar) return;
+
+      if (!isMobile() || !mobile || !frame || root.classList.contains("gallery-page--single")) {
+        bar.style.removeProperty("top");
+        return;
+      }
+
+      window.requestAnimationFrame(function () {
+        if (!root.isConnected) return;
+        var mobileRect = mobile.getBoundingClientRect();
+        var frameRect = frame.getBoundingClientRect();
+        if (!frameRect.height) return;
+
+        var barH = bar.offsetHeight || 28;
+        var gap = 20;
+        var top = Math.round(frameRect.top - mobileRect.top - gap - barH);
+
+        var header = document.querySelector(".site-header");
+        var headerBottom = header ? header.getBoundingClientRect().bottom : mobileRect.top;
+        var minTop = Math.round(headerBottom - mobileRect.top + 4);
+
+        bar.style.top = Math.max(minTop, top) + "px";
+      });
     }
 
     function initMobileSwipe() {
@@ -668,14 +703,21 @@
     });
 
     var resizeTimer;
-    window.addEventListener("resize", function () {
+    function onViewportChange() {
       if (!root.isConnected) return;
       window.clearTimeout(resizeTimer);
       resizeTimer = window.setTimeout(function () {
         refreshHeroSlot();
         applyHeroMeta(readPhoto(photos[index]));
+        syncMobileSeriesTitle();
       }, 80);
-    });
+    }
+
+    window.addEventListener("resize", onViewportChange);
+    if (window.visualViewport) {
+      window.visualViewport.addEventListener("resize", onViewportChange);
+      window.visualViewport.addEventListener("scroll", onViewportChange);
+    }
 
     root.classList.toggle(
       "gallery-page--single",
@@ -708,6 +750,9 @@
     setActive(0, { animate: false });
     initMobileSwipe();
     initSlideshowClick();
+    syncMobileSeriesTitle();
+    window.setTimeout(syncMobileSeriesTitle, 120);
+    window.setTimeout(syncMobileSeriesTitle, 400);
     initGalleryLightbox(root, {
       getCurrentPhoto: function () {
         return readPhoto(photos[index]);
