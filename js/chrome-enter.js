@@ -123,9 +123,21 @@
     });
   }
 
+  function resetChromeFromCache() {
+    if (!isAnimatedPage()) return;
+    document.body.classList.remove("page-is-leaving", "chrome-is-entering");
+    document.body.classList.add("chrome-is-entered");
+  }
+
   if (document.readyState === "loading") {
     document.addEventListener("DOMContentLoaded", boot);
   } else {
     boot();
   }
+
+  window.addEventListener("pageshow", function (event) {
+    if (event.persisted) {
+      resetChromeFromCache();
+    }
+  });
 })();

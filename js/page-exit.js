@@ -66,6 +66,11 @@
 
     var leaving = false;
 
+    function resetLeaveState() {
+      leaving = false;
+      document.body.classList.remove("page-is-leaving");
+    }
+
     document.addEventListener(
       "click",
       function (event) {
@@ -85,6 +90,17 @@
       },
       true
     );
+
+    // Browser back/forward can restore a frozen page mid-exit (bfcache).
+    window.addEventListener("pageshow", function (event) {
+      if (event.persisted || document.body.classList.contains("page-is-leaving")) {
+        resetLeaveState();
+      }
+    });
+
+    window.addEventListener("pagehide", function () {
+      resetLeaveState();
+    });
   }
 
   if (document.readyState === "loading") {
